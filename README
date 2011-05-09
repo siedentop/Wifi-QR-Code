@@ -1,0 +1,12 @@
+This is a project that lets you write your wifi settings and lets you
+generate a QR code for those settings. The displayed QR code can be used
+(Barcode Scanner on Android) to set settings in your smartphone. 
+
+Note: 
+*Important* This uses the Google Chart API. This means your password will be sent in the URL!
+
+Usage: 
+	./main.py (this will print a help text, or use -h to get help)
+	
+
+main.py --ssid=MyNetwork --password=secret123 --auth=WPA
