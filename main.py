@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+
+#Copyright: 2011 Christoph Siedentop
+#License: This code is licensed under the GPLv3. For more see LICENSE
+
+
 from wifi import Wifi
 from optparse import OptionParser
 

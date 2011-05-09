@@ -10,3 +10,5 @@ Usage:
 	
 
 main.py --ssid=MyNetwork --password=secret123 --auth=WPA
+
+This code is released under the GPLv3. For more information see LICENSE-file.

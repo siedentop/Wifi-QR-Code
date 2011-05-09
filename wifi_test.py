@@ -1,3 +1,6 @@
+#Copyright: 2011 Christoph Siedentop
+#License: This code is licensed under the GPLv3. For more see LICENSE
+
 import unittest
 from wifi import Wifi
 
