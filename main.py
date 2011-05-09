@@ -17,14 +17,14 @@ if __name__=="__main__":
 	parser.add_option('-a', '--auth', dest='auth', help = 'The type of authentication used. Can be WEP or WPA (default WPA)', default='WPA')
 	(options, args) = parser.parse_args()
 	
-	if len(args) != 0:
+	if len(args) == 0:
 		try:
 			w = Wifi(password=options.password, auth=options.auth, ssid=options.ssid)
 			print w.prettify()
 			w.createChart()
 			w.display()
 		except:
-			parser.usage()
+			parser.print_help()
 	else:
 		parser.print_help()
 	
