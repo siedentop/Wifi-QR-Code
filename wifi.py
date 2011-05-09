@@ -1,8 +1,7 @@
 #Copyright: 2011 Christoph Siedentop
 #License: This code is licensed under the GPLv3. For more see LICENSE
 
-import Image
-from pygooglechart import QRChart
+from pyqrnative.PyQRNative import QRCode, QRErrorCorrectLevel
 
 class Wifi():
 	def __init__(self, ssid = '', password = '', auth = 'WPA'):
@@ -26,22 +25,22 @@ P 	mypass 	Password
 		return "WIFI:T:" + self.auth + ";S:" + self.ssid + ";P:" + self.password + ";;"
 
 
-	def createChart(self, width = 500, height = 500, encoding = 'H', padding = 2):
-		self.chart = QRChart(width, height)
-		self.chart.add_data(self.__str__())
-		self.chart.set_ec(encoding, padding)
+	def createChart(self, size=10, level = QRErrorCorrectLevel.M):
+		self.qr = QRCode(size, level)
+		self.qr.addData(self.__str__())
+		self.qr.make()
+		self.image = self.qr.makeImage()
 		
 	def save(self, name = ''):
 		if name == '':
 			self.filename = self.ssid + '.png'
 		else:
 			self.filename = name
-		self.chart.download(self.filename) #TODO: needs a test that chart exists
+		self.image.save(self.filename, 'PNG')
 		print "Setup QR-Code saved as %s" %(self.filename)
 	
 	def display(self):
-		self.save() # same here.
-		Image.open(self.filename).show()
+		self.image.show()
 		
 	def prettify(self):
 		s = '''Your Settings are: 

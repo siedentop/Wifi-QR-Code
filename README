@@ -3,7 +3,7 @@ generate a QR code for those settings. The displayed QR code can be used
 (Barcode Scanner on Android) to set settings in your smartphone. 
 
 Note: 
-*Important* This uses the Google Chart API. This means your password will be sent in the URL!
+If you have Git version <1.7.5 please run "git submodule update". 
 
 Usage: 
 	./main.py (this will print a help text, or use -h to get help)
