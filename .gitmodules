@@ -1,0 +1,3 @@
+[submodule "pyqrnative"]
+	path = pyqrnative
+	url = git://github.com/unapiedra/pyqrnative.git
