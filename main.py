@@ -20,7 +20,7 @@ if __name__=="__main__":
 	if len(args) == 0:
 		try:
 			w = Wifi(password=options.password, auth=options.auth, ssid=options.ssid)
-			print w.prettify()
+			print(w.prettify())
 			w.createChart()
 			w.display()
 		except:

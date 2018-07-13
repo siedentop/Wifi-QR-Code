@@ -37,7 +37,7 @@ P 	mypass 	Password
 		else:
 			self.filename = name
 		self.image.save(self.filename, 'PNG')
-		print "Setup QR-Code saved as %s" %(self.filename)
+		print("Setup QR-Code saved as %s" %(self.filename))
 	
 	def display(self):
 		self.image.show()
